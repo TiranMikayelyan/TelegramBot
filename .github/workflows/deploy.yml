@@ -18,6 +18,6 @@ jobs:
 
       - name: Deploy to Fly.io
         env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          FLY_API_TOKEN: ${{ secrets.FlyV1 fm2_lJPECAAAAAAACGfSxBAGt9IOJVTH6/5+2BYNfj1SwrVodHRwczovL2FwaS5mbHkuaW8vdjGUAJLOAA9gKR8Lk7lodHRwczovL2FwaS5mbHkuaW8vYWFhL3YxxDxwWTVOCtlODh2lzYkkdHQOA0xPNzaLgUCJL5OrLqkCjp9SSaLlS3Qg/ruBB8r7XIyuh9cni9YbJhKKYvfEThOEDwUrBiuvI1R9FN8KKZYTDM5H6Lt+nAkTGvX8LVtP2RW+egLRGaTMpda3ojALqnHz1CltElJW+o+7/aEX0hHBl7v3nP4spFrXldnUlcQgHtHpmFweRg7VgI2XjRaJ/s8k72zxYx+gXNzumv1NRfw=,fm2_lJPEThOEDwUrBiuvI1R9FN8KKZYTDM5H6Lt+nAkTGvX8LVtP2RW+egLRGaTMpda3ojALqnHz1CltElJW+o+7/aEX0hHBl7v3nP4spFrXldnUlcQQ2RfL8lPsHNacMsmMaFQBPMO5aHR0cHM6Ly9hcGkuZmx5LmlvL2FhYS92MZgEks5n1ENTzwAAAAEjzGFxF84ADshcCpHOAA7IXAzEELRc6Jssag6t9Nquj5icriDEIPLgRLXcIhYhlm1YMcDYDQ8eQYFPEMPGQCW/g7/y6oCk }}
         run: |
           flyctl deploy --remote-only
