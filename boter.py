@@ -16,18 +16,20 @@ def start_message(message):
         reply_markup=markup
     )
 
-    try:
-        video = open("C:\\Users\\user\\Desktop\\To.mp4", "rb")
-        bot.send_video(message.chat.id, video, caption="🎂 Enjoy this birthday surprise video!")
-        video.close()  
-    except Exception as e:
-        bot.send_message(message.chat.id, f"❌ Error sending video: {str(e)}")
-
 @bot.callback_query_handler(func=lambda call: call.data == "show_surprise")
 def handle_surprise(call):
     bot.edit_message_text(
         chat_id=call.message.chat.id,
         message_id=call.message.message_id,
-        text="🎉 💖 Happy Birthday! 🥳 Another year, another adventure! May your life be filled with love, success, and beautiful moments. Celebrate big and make unforgettable memories! 🎊🎁🎉")
+        text="🎉 💖 Happy Birthday! 🥳 Another year, another adventure! May your life be filled with love, success, and beautiful moments. Celebrate big and make unforgettable memories! 🎊🎁🎉"
+    )
+
+    try:
+        video = open("C:\\Users\\user\\Desktop\\To.mp4", "rb")
+        bot.send_video(call.message.chat.id, video, caption="🎂 Enjoy this birthday surprise video!")
+        video.close()  
+    except Exception as e:
+        bot.send_message(call.message.chat.id, f"❌ Error sending video: {str(e)}")
 
 bot.infinity_polling()
+
